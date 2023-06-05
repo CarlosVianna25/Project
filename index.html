@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cl Store</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="about-container">
+      <div id="brand">
+        <img src="img/MyLogo.png" alt="Cl Store" />
+        <h1>CL Company and Store </h1>
+      </div>
+      <p id="exclusive">the most import place to buy a new knowledge!</p>
+      <h2>learn to create a software and make money</h2>
+      <p id="date"> 
+        <!--PHP code-->
+        <?php echo date("d/m/Y"); ?> | <?php echo date("H:i"); ?> | 100% guaranteed return
+      </p>
+      <p id="description">
+       on this site you will learn programming languages and how begin with this area.
+      </p>
+      <h4>available courses</h4>
+      <div id="users-container">
+        <div class="user-card">
+          <img src="img/logoHtmlCss.png" alt="Html and css" />
+          <p class="user-name">HTML5 and CSS3</p>
+          <p class="user-role">Front-end</p>
+        </div>
+        <div class="user-card">
+          <img src="img/JavaScript-Logo.png" alt="JavaScript" />
+          <p class="user-name">JavaScript</p>
+          <p class="user-role">Back-end</p>
+        </div>
+        <div class="user-card">
+          <img src="img/PHPlogo.png" alt="PHP" />
+          <p class="user-name">PHP</p>
+          <p class="user-role">Back-end</p>
+        </div>
+      </div>
+    </div>
+    <div id="form-container">
+      <div id="form-inner">
+        <h3>subscribe</h3>
+        <p>
+          your best chance for learn!
+        </p>
+        <form id="register-form">
+          <div id="name-container">
+            <input type="text" name="name" id="name" placeholder="Name" />
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Lastname"
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Type your e-mail"
+          />
+          <input type="submit" value="submit" />
+        </form>
+        <div id="benefits">
+          <h4>what you learn</h4>
+          <ul>
+            <li>how to choose a technology stack</li>
+            <li>creating a site project</li>
+            <li>prospecting clients</li>
+            <li>sales strategy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Java code
+      document.getElementById("register-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Formulário enviado com sucesso!");
+      });
+    </script>
+  </body>
+</html>
