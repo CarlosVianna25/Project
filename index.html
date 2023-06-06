@@ -16,6 +16,18 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <?php
+    // Configurações do banco de dados
+    $host = "localhost";
+    $dbName = "nome_do_banco";
+    $username = "nome_de_usuario";
+    $password = "senha_do_usuario";
+    $email = "email_do_usuário"
+
+    try {
+      // Conectar ao banco de dados usando PDO
+      $conn = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $username, $password);
+      ?>
     <div id="about-container">
       <div id="brand">
         <img src="img/MyLogo.png" alt="Cl Store" />
@@ -24,8 +36,7 @@
       <p id="exclusive">the most import place to buy a new knowledge!</p>
       <h2>learn to create a software and make money</h2>
       <p id="date"> 
-        <!--PHP code-->
-        <?php echo date("d/m/Y"); ?> | <?php echo date("H:i"); ?> | 100% guaranteed return
+        <span id="current-time"></span> | 100% guaranteed return
       </p>
       <p id="description">
        on this site you will learn programming languages and how begin with this area.
@@ -86,6 +97,43 @@
     </div>
     <script>
       // Java code
+
+      document.addEventListener("DOMContentLoaded", function () {
+    // Obter o elemento onde o horário atual será exibido
+    var currentTimeElement = document.getElementById("current-time");
+
+    // Função para atualizar o horário
+    function updateCurrentTime() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Formatar a hora no formato HH:MM:SS
+      var formattedTime =
+        leadingZero(hours) +
+        ":" +
+        leadingZero(minutes) +
+        ":" +
+        leadingZero(seconds);
+
+      // Atualizar o conteúdo do elemento
+      currentTimeElement.textContent = formattedTime;
+    }
+
+    // Função auxiliar para adicionar um zero à esquerda, se necessário
+    function leadingZero(number) {
+      return number < 10 ? "0" + number : number;
+    }
+
+    // Chamar a função inicialmente para exibir o horário atual
+    updateCurrentTime();
+
+    // Atualizar o horário a cada segundo (1000 milissegundos)
+    setInterval(updateCurrentTime, 1000);
+  });
+
+
       document.getElementById("register-form").addEventListener("submit", function(event) {
         event.preventDefault();
         alert("Formulário enviado com sucesso!");
